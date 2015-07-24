@@ -96,6 +96,18 @@
         </article>
     </section>
 
+    <hr>
+    {% if article.prev_article %}
+    <em><a href="{{ SITEURL }}/{{ article.prev_article.url}}">&#8592;
+                {{ article.prev_article.title }}
+      </a></em>
+            {% endif %}<br>
+    {% if article.next_article %}
+    <em><a href="{{ SITEURL }}/{{ article.next_article.url}}">
+                {{ article.next_article.title }}
+            </a>&#8594;</em>
+    {% endif %}
+
 {% endblock %}
 
 {% block scripts %}
